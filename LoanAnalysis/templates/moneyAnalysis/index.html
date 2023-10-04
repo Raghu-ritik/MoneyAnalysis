@@ -1,0 +1,179 @@
+{% extends "ComponentPages/pageWrapper.html" %}
+
+{% block CSS_JS %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/moneyAnalysis/mainGatteringData/main.css') }}">
+{% endblock %} 
+
+{% block content %}
+  <div class="container-fluid">
+    <!-- Gattering Data Starts -->
+    <section id="Data_Gattering">
+      <div class="row main-table">
+        <div class="col-md-12">
+          <h2>Gathering Data</h2>
+          <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="Select_Data_Gattering">
+            <option selected>select option to connect with data</option>
+            <option value="DatabaseConnection">Database connection</option>
+            <option value="CSV">CSV</option>
+            <option value="ExcelFile">Excel File</option>
+            <option value="JSON">JSON </option>
+          </select>
+          <div class="container" id="GatherDataInputConatiner">            
+          </div>
+          <div class="row main-table DFTable">
+            <div class="col-md-12">
+              {{table|safe}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Gattering Data Ends -->
+
+    <!-- Data Cleaning/preprocessing Starts -->
+    <section id="Data_Gattering">
+      <div class="row main-table DFTable">
+        <div class="col-md-12">
+          <h2>Data Cleaning/preprocessing</h2>
+          <h4>Unique Counts</h4>
+          <table>
+              {% for column, count in unique_counts.items() %}
+              <tr>
+                <td>{{ column }}</td>
+                <td>{{ count }}</td>
+              </tr>   
+              {% endfor %}
+          </table>
+
+          <div class="row main-table DFTable">
+            <div class="col-md-12">
+              {{tableDescribe|safe}}
+            </div>
+          </div>
+
+          <div class="row main-table DFTable">
+            <div class="col-md-12">
+              {{tanleNullValues|safe}}
+            </div>
+          </div>
+          <div class="row">
+            <h4>Applying the Encoding methods</h4>
+          </div>
+
+          <div class="row">
+            <h4>Applying the Imputation methods</h4>
+          </div>
+
+          <div class="row">
+            <a href="createPlot">Plot of It</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Data Cleaning/preprocessing Starts -->
+     
+  
+    <!-- Analyse Data Starts -->
+    <section id="Data_Gattering">
+      <div class="row main-table">
+        <div class="col-md-12">
+          <h2>Analyse Data</h2>
+          
+        </div>
+      </div>
+    </section>
+    <!-- Analyse Data Starts -->
+
+
+    <!-- Feature Engineering Starts -->
+    <section id="Data_Gattering">
+      <div class="row main-table">
+        <div class="col-md-12">
+          <h2>Feature Engineering</h2>
+          
+        </div>
+      </div>
+    </section>
+    <!-- Feature Engineering Starts -->
+
+    <!-- Feature Selection Starts -->
+    <section id="Data_Gattering">
+      <div class="row main-table">
+        <div class="col-md-12">
+          <h2>Feature Selection</h2>
+          
+        </div>
+      </div>
+              <!-- OverFitting & Underfitting Starts -->
+              <section id="Data_Gattering">
+                <div class="row main-table">
+                  <div class="col-md-12">
+                    <h2>OverFitting & Underfitting</h2>
+                    
+                  </div>
+                </div>
+              </section>
+              <!-- OverFitting & Underfitting Starts -->
+    </section>
+    <!-- Feature Selection Starts -->
+
+
+        <!-- Model Building Starts -->
+        <section id="Data_Gattering">
+          <div class="row main-table">
+            <div class="col-md-12">
+              <h2>Model Building</h2>
+              
+            </div>
+          </div>
+        </section>
+        <!-- Model Building Starts -->
+
+        <!-- Cross Validation Starts -->
+        <section id="Data_Gattering">
+          <div class="row main-table">
+            <div class="col-md-12">
+              <h2>Cross Validation</h2>
+              
+            </div>
+          </div>
+        </section>
+        <!-- Cross Validation Starts -->
+
+        <!-- Results Starts -->
+        <section id="Data_Gattering">
+          <div class="row main-table">
+            <div class="col-md-12">
+              <h2>Results</h2>
+            </div>
+          </div>
+        </section>
+        <!-- Results Starts -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+  
+  </div>
+ 
+
+
+  {% endblock %}
+
+  {% block jsFiles %}
+  <script src="{{ url_for('static', filename='js/moneyAnalysis/mainGatteringData/main.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/moneyAnalysis/DragAndDropFiles/DandDFiles.js') }}"></script>
+
+  
+  {% endblock %}     
